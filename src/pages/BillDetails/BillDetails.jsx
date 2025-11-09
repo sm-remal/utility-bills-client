@@ -32,25 +32,41 @@ const BillDetails = () => {
             additionalInfo: form.additionalInfo.value,
         };
 
-        try {
-            const res = await fetch("http://localhost:3000/pay-bill", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(paymentData),
-            });
+        // try {
+        //     const res = await fetch("http://localhost:3000/pay-bill", {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify(paymentData),
+        //     });
 
-            const data = await res.json();
-            if (data.insertedId) {
-                toast.success("Bill payment successful!");
-                setIsModalOpen(false);
-                form.reset();
-            } else {
-                toast.error("Payment failed. Please try again.");
-            }
-        } catch (error) {
-            toast.error("Something went wrong while paying bill.");
-            console.error(error);
+        //     const data = await res.json();
+        //     if (data.insertedId) {
+        //         toast.success("Bill payment successful!");
+        //         setIsModalOpen(false);
+        //         form.reset();
+        //     } else {
+        //         toast.error("Payment failed. Please try again.");
+        //     }
+        // } catch (error) {
+        //     toast.error("Something went wrong while paying bill.");
+        //     console.error(error);
+        // }
+
+        const res = await fetch("http://localhost:3000/pay-bill", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(paymentData),
+        });
+
+        const data = await res.json();
+        if (data.insertedId) {
+            toast.success("Bill payment successful!");
+            setIsModalOpen(false);
+            form.reset();
+        } else {
+            toast.error("Payment failed. Please try again.");
         }
+
     };
 
     return (
@@ -81,12 +97,12 @@ const BillDetails = () => {
                         <div className="mb-4">
                             <div
                                 className={`badge text-sm py-2 px-3 rounded-full ${category === "Electricity"
-                                        ? "bg-yellow-500 text-white"
-                                        : category === "Gas"
-                                            ? "bg-red-500 text-white"
-                                            : category === "Water"
-                                                ? "bg-blue-500 text-white"
-                                                : "bg-green-600 text-white"
+                                    ? "bg-yellow-500 text-white"
+                                    : category === "Gas"
+                                        ? "bg-red-500 text-white"
+                                        : category === "Water"
+                                            ? "bg-blue-500 text-white"
+                                            : "bg-green-600 text-white"
                                     }`}
                             >
                                 {category}
@@ -117,8 +133,8 @@ const BillDetails = () => {
                             onClick={() => setIsModalOpen(true)}
                             disabled={!isCurrentMonth}
                             className={`btn w-full rounded-full text-white font-semibold ${isCurrentMonth
-                                    ? "bg-gradient-to-r from-pink-500 to-red-500 hover:opacity-90"
-                                    : "bg-gray-400 cursor-not-allowed"
+                                ? "bg-gradient-to-r from-pink-500 to-red-500 hover:opacity-90"
+                                : "bg-gray-400 cursor-not-allowed"
                                 }`}
                         >
                             {isCurrentMonth ? "Pay Bill" : "Cannot Pay (Old Month)"}
