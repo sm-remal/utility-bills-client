@@ -16,10 +16,12 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                loader: () => fetch("http://localhost:3000/latest-bills"),
                 element: <Home />
             },
             {
                 path: "/bills",
+                loader: () => fetch("http://localhost:3000/bill-category"),
                 element: <Bills />
             },
             {

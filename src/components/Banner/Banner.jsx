@@ -31,7 +31,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative h-[380px] md:h-[400px] w-full overflow-hidden flex items-center justify-center bg-gray-100">
+    <section className="relative h-[380px] md:h-[500px] w-full overflow-hidden flex items-center justify-center bg-gray-100">
 
       {/* Slides container */}
       <div
