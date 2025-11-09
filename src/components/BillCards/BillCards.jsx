@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const BillCards = ({ bill }) => {
-  const { _id, title, category, location, description, image, date, amount } = bill;
+  const { _id, title, category, location, image, date, amount } = bill;
 
   return (
     <div className="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 px-4 md:px-0">
@@ -17,9 +17,11 @@ const BillCards = ({ bill }) => {
 
       {/* Card Body */}
       <div className="card-body">
-        {/* Title + Category */}
-        <div className="flex items-center justify-between">
-          <h2 className="card-title text-lg">{title}</h2>
+        {/* Title */}
+        <h2 className="card-title text-lg">{title}</h2>
+
+        {/* Category Badge */}
+        <div className="mt-1">
           <div
             className={`badge text-xs badge-sm rounded-full ${
               category === "Electricity"
@@ -35,14 +37,15 @@ const BillCards = ({ bill }) => {
           </div>
         </div>
 
-        {/* Location + Date */}
-        <div className="text-xs text-gray-500 flex justify-between">
-          <span>{location}</span>
-          <span>{new Date(date).toLocaleDateString()}</span>
+        {/* Date */}
+        <div className="text-xs text-gray-500 mt-1 flex items-center">
+          <span>📅 {new Date(date).toLocaleDateString()}</span>
         </div>
 
-        {/* Description */}
-        <p className="text-sm mt-2 line-clamp-2">{description}</p>
+        {/* Location */}
+        <div className="text-xs text-gray-500 mt-2 flex items-center">
+          <span>📍 {location}</span>
+        </div>
 
         {/* Amount */}
         <div className="mt-4 font-semibold text-base text-gray-700">

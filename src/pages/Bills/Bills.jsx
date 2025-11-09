@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import BillCards from "../../components/BillCards/BillCards";
-// import BillCards from "../../components/BillCards"; // adjust path if needed
 
 const Bills = () => {
   // Loader data (initial bills)
