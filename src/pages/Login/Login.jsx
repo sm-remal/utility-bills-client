@@ -125,7 +125,7 @@ const Login = () => {
 
           <p className="text-center mt-3">
             New to our website?{" "}
-            <Link className="text-pink-600 hover:text-red-600" to="/auth/register">
+            <Link className="text-pink-600 hover:text-red-600" to="/registration">
               Register
             </Link>
           </p>
