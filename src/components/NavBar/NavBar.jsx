@@ -132,6 +132,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { getErrorMessage } from "../../utility/errorMessage";
 import useAuth from "../../hooks/useAuth";
+import logo from "../../assets/logo.png"
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
@@ -174,7 +175,7 @@ const Navbar = () => {
       </li>
       {user && (
         <li>
-          <NavLink to={"/my-pay-bills"}>
+          <NavLink to={"/my-bills"}>
             <MdPayments className="text-lg" /> My Pay Bills
           </NavLink>
         </li>
@@ -183,7 +184,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm fixed top-0 left-0 right-0 z-50 px-4">
+    <div className="navbar bg-pink-50 shadow-sm px-4">
       {/* Navbar Start: Mobile Hamburger + Logo */}
       <div className="navbar-start flex items-center gap-2">
         {/* Mobile Hamburger Icon */}
@@ -215,21 +216,13 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to={"/"}
-          className="flex items-center gap-2 text-xl font-bold text-pink-600"
-        >
-          ⚡ UtilityPay
+          className="-ml-5 md:ml-0">
+          <img src={logo} alt="" className="w-[180px]"/>
         </Link>
       </div>
 
-      {/* Desktop Menu (Right side) */}
-      {/* <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-4 font-medium">
-          {menuItems}
-        </ul>
-      </div> */}
-
       {/* Right Side: Login/Register or Avatar+Logout */}
-      <div className="navbar-end flex items-center gap-2 ml-2">
+      <div className="navbar-end flex items-center gap-4 ml-2">
         <div className=" hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4 font-medium">
           {menuItems}
