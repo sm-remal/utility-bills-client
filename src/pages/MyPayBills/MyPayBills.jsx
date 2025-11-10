@@ -180,7 +180,7 @@ const MyPayBills = () => {
   return (
     <div className="p-6 mt-6">
       {/* Page Header */}
-      <h2 className="text-4xl font-extrabold mb-8 text-center bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+      <h2 className="text-3xl font-semibold mb-8 text-center bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
         My Pay Bills
       </h2>
 

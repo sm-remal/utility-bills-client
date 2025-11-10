@@ -157,7 +157,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to={"/profile"} className="flex items-center gap-2">
+            <Link to={"/my-profile"} className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full border border-gray-300 overflow-hidden">
                 <img
                   alt="User avatar"

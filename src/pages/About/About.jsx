@@ -39,7 +39,7 @@ const About = () => {
           <motion.div
             key={i}
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-br from-pink-100 to-rose-200 p-6 rounded-xl shadow-md text-center border border-rose-200"
+            className="bg-blue-200 p-6 rounded-xl shadow-md text-center border border-rose-200"
           >
             <div className="flex justify-center text-rose-600 mb-3">{item.icon}</div>
             <h3 className="text-xl font-semibold text-rose-700 mb-2">{item.title}</h3>
