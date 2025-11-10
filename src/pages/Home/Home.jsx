@@ -3,6 +3,8 @@ import Banner from '../../components/Banner/Banner';
 import CategoryCard from '../../components/CategoryCard/CategoryCard';
 import { useLoaderData } from 'react-router';
 import BillCards from '../../components/BillCards/BillCards';
+import HowItWorks from '../../components/HowItWorks/HowItWorks';
+import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 
 const Home = () => {
     const latestBills = useLoaderData()
@@ -23,6 +25,9 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+
+            <HowItWorks></HowItWorks>
+            <WhyChooseUs></WhyChooseUs>
             
         </div>
     );

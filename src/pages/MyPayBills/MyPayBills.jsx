@@ -4,7 +4,6 @@ import { toast } from "react-hot-toast";
 import Swal from "sweetalert2";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-// import autoTable from "jspdf-autotable";
 
 const MyPayBills = () => {
   const { user } = useAuth();
