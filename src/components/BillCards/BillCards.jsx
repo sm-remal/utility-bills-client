@@ -49,7 +49,7 @@ const BillCards = ({ bill }) => {
 
         {/* Amount */}
         <div className="mt-4 font-semibold text-base text-gray-700">
-          💰 Amount: <span className="text-green-600">{amount} TK</span>
+          💰 Amount: <span className="text-green-600">{amount}৳</span>
         </div>
 
         {/* View Button */}

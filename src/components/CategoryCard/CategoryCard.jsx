@@ -7,10 +7,10 @@ const WaterIcon = () => <span className="text-blue-500 text-4xl">💧</span>;
 const InternetIcon = () => <span className="text-purple-500 text-4xl">🌐</span>;
 
 const categories = [
-    { name: "Electricity", icon: <ElectricityIcon />, path: "/bills/electricity" },
-    { name: "Gas", icon: <GasIcon />, path: "/bills/gas" },
-    { name: "Water", icon: <WaterIcon />, path: "/bills/water" },
-    { name: "Internet", icon: <InternetIcon />, path: "/bills/internet" },
+    { name: "Electricity", icon: <ElectricityIcon />, path: "#" },
+    { name: "Gas", icon: <GasIcon />, path: "#" },
+    { name: "Water", icon: <WaterIcon />, path: "#" },
+    { name: "Internet", icon: <InternetIcon />, path: "#" },
 ];
 
 const CategoryCard = () => {

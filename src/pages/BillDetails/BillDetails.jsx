@@ -118,7 +118,7 @@ const BillDetails = () => {
                                 <span className="font-semibold">📍 Location:</span> {location}
                             </p>
                             <p>
-                                <span className="font-semibold">💰 Amount:</span> {amount} TK
+                                <span className="font-semibold">💰 Amount:</span> {amount} ৳
                             </p>
                             <p>
                                 <span className="font-semibold">📅 Date:</span>{" "}
@@ -250,7 +250,7 @@ const BillDetails = () => {
                                     <input
                                         type="text"
                                         name="amount"
-                                        value={amount + " TK"}
+                                        value={amount + " ৳"}
                                         readOnly
                                         className="input input-bordered w-full bg-gray-100"
                                     />

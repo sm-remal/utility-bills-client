@@ -15,7 +15,7 @@ const Home = () => {
             <CategoryCard></CategoryCard>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-                <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-pink-500 mb-12">
+                <h2 className="text-center text-2xl sm:text-3xl md:text-3xl font-semibold text-pink-600 mb-12">
                     Latest Bills
                 </h2>
 

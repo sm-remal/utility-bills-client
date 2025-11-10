@@ -36,7 +36,7 @@ const HowItWorks = () => {
     <section className="py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2
-          className="text-3xl md:text-4xl font-bold text-pink-700 mb-10"
+          className="text-3xl font-semibold text-pink-600 mb-10"
           data-aos="fade-down"
         >
           How It Works
