@@ -26,7 +26,7 @@ const CategoryCard = () => {
                         onClick={() => navigate(cat.path)}
                         className="p-[2px] rounded-lg bg-gradient-to-r from-pink-500 to-red-500 cursor-pointer"
                     >
-                        <div className="category-card p-6 bg-white rounded-lg flex flex-col items-center justify-center
+                        <div className="category-card bg-red-100 p-6 rounded-lg flex flex-col items-center justify-center
                           transform transition duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <div className="mb-3">{cat.icon}</div>
                             <h3 className="text-lg font-semibold">{cat.name}</h3>

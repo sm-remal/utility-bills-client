@@ -7,6 +7,9 @@ import MyPayBills from "../pages/MyPayBills/MyPayBills";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoutes from "./PrivateRoutes";
+import About from "../pages/About/About";
+import FAQ from "../pages/FAQ/FAQ";
+import MyProfile from "../pages/MyProfile/MyProfile";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +48,20 @@ export const router = createBrowserRouter([
                 path: "/registration",
                 element: <Registration />
             },
+            {
+                path: "/my-profile",
+                element: <PrivateRoutes>
+                    <MyProfile />
+                </PrivateRoutes>
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/faq",
+                element: <FAQ />
+            }
         ]
     },
 ]);
