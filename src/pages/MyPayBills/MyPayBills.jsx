@@ -4,24 +4,20 @@ import { toast } from "react-hot-toast";
 import Swal from "sweetalert2"; 
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyPayBills = () => {
  
   const { user } = useAuth();
   const [bills, setBills] = useState([]);
 
+  const axiosSecure = useAxiosSecure();
+
   // User Bills Load (useEffect)
   useEffect(() => {
     if (user?.email) {
-      
-      fetch(`http://localhost:3000/my-pay-bills?email=${user.email}`)
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return res.json();
-        })
-        .then((data) => setBills(data))
+      axiosSecure.get(`/my-pay-bills?email=${user.email}`)
+        .then((data) => setBills(data.data))
         .catch((error) => {
           console.error("Fetch error:", error);
           toast.error("Failed to load bills");
@@ -76,7 +72,7 @@ const MyPayBills = () => {
       bill.date,
     ]);
 
-    // ✅ Use imported autoTable properly
+    // Use imported autoTable properly
     autoTable(doc, {
       head: [tableColumn],
       body: tableRows,
@@ -119,15 +115,10 @@ const MyPayBills = () => {
     });
 
     if (formValues) {
-      fetch(`http://localhost:3000/my-pay-bills/${bill._id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formValues),
-      })
-        .then((res) => res.json())
+      axiosSecure.put(`/my-pay-bills/${bill._id}`, formValues)
         .then((data) => {
-    
-          if (data.modifiedCount > 0) { 
+
+          if (data.data.modifiedCount > 0) { 
             Swal.fire({
               title: "Updated!",
               text: "Your bill information has been updated.",
@@ -160,13 +151,10 @@ const MyPayBills = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/my-pay-bills/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
+        axiosSecure.delete(`/my-pay-bills/${id}`)
           .then((data) => {
             
-            if (data.deletedCount > 0) { 
+            if (data.data.deletedCount > 0) { 
               Swal.fire({
                 title: "Deleted!",
                 text: "Your bill has been deleted.",
@@ -195,7 +183,7 @@ const MyPayBills = () => {
       <div className="flex justify-between items-center flex-wrap gap-3 mb-8 p-4 bg-white shadow-md rounded-lg">
         <div className="text-xl font-bold space-y-1">
           <p className="text-gray-700">Total Bills Paid: <span className="text-red-500">{totalBills}</span></p>
-          <p className="text-gray-700">Total Amount: <span className="text-red-500">৳{totalAmount.toFixed(2)}</span></p>
+          <p className="text-gray-700">Total Amount: <span className="text-red-500">৳ {totalAmount.toFixed(2)}</span></p>
         </div>
         <button
           onClick={handleDownloadReport}
@@ -225,7 +213,7 @@ const MyPayBills = () => {
                 <tr key={bill._id} className="hover:bg-gray-100 transition duration-150 border-b border-gray-200 text-sm">
                   <td className="py-3 px-6">{bill.username}</td>
                   <td className="py-3 px-6">{bill.email}</td>
-                  <td className="py-3 px-6 font-semibold text-green-600">৳{Number(bill.amount).toFixed(2)}</td>
+                  <td className="py-3 px-6 font-semibold text-green-600">৳ {Number(bill.amount).toFixed(2)}</td>
                   <td className="py-3 px-6">{bill.address}</td>
                   <td className="py-3 px-6">{bill.phone}</td>
                   <td className="py-3 px-6">{bill.date}</td>
