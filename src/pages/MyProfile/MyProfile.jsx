@@ -48,7 +48,8 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-6">
+    <div className="min-h-screen flex justify-center items-center mt-5 md:mt-10 p-6">
+      <title>My Profile</title>
       <div className="max-w-5xl w-full bg-white rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row gap-10">
 
         {/* ===== Left Side: Profile Card ===== */}

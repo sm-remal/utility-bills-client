@@ -21,7 +21,7 @@ const Login = () => {
 
     setSuccess(false);
     setError("");
-    toast.loading("Logging in...", { id: "login" });
+    // toast.loading("Logging in...", { id: "login" });
 
     signInUser(email, password)
       .then((result) => {
@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    toast.loading("Signing in with Google...", { id: "login" });
+    // toast.loading("Signing in with Google...", { id: "login" });
     googleSignIn()
       .then((result) => {
         console.log(result.user)
@@ -56,7 +56,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center mt-8 px-4">
+      <title>UtilityPay - Login</title>
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl rounded-2xl border border-gray-200">
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center text-pink-600 mb-4">Login</h1>

@@ -23,6 +23,7 @@ const FAQ = () => {
 
   return (
     <section className="max-w-5xl mx-auto px-6 py-16">
+      <title>UtilityPay - FAQ</title>
       <motion.h1
         className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-red-600 mb-8 text-center"
         initial={{ opacity: 0, y: -50 }}

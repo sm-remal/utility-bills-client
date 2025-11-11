@@ -36,6 +36,7 @@ const Bills = () => {
 
   return (
     <div className="container mx-auto px-4 md:px-8 my-10">
+      <title>UtilityPay | Available Bills</title>
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <h1 className="text-3xl font-semibold text-pink-600">Available Bills</h1>

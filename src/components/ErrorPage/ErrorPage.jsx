@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { AlertTriangle } from "lucide-react"; 
+import { AlertTriangle } from "lucide-react";  
 
 const ErrorPage = () => {
     const navigate = useNavigate();

@@ -11,6 +11,7 @@ const Home = () => {
     console.log(latestBills);
     return (
         <div>
+            <title>UtilityPay - Home</title>
             <Banner></Banner>
             <CategoryCard></CategoryCard>
 

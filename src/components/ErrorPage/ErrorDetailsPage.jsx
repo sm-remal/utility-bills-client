@@ -14,10 +14,10 @@ const ErrorDetailsPage = () => {
             </div>
 
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 mb-2">
-                3D Models are Not Found
+                Bill Details are Not Found
             </h2>
             <p className="text-gray-500 max-w-md mb-8">
-                3D Models are looking for does not exist or has been removed.
+                Bill Details are looking for does not exist or has been removed.
             </p>
 
 

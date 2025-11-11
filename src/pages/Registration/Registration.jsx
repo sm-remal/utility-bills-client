@@ -42,7 +42,7 @@ const Registration = () => {
 
     setSuccess(false);
     setError("");
-    toast.loading("Creating user...", { id: "create-user" });
+    // toast.loading("Creating user...", { id: "create-user" });
 
     createUser(email, password)
       .then((res) => {
@@ -67,7 +67,7 @@ const Registration = () => {
   };
 
   const handleGoogleSignIn = () => {
-    toast.loading("Signing in...", { id: "create-user" });
+    // toast.loading("Signing in...", { id: "create-user" });
     googleSignIn()
       .then((result) => {
         console.log(result.user)
@@ -81,7 +81,8 @@ const Registration = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center mt-8 px-4">
+      <title>UtilityPay - Registration</title>
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl rounded-2xl">
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center text-pink-600">Register</h1>
