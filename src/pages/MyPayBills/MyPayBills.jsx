@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; 
 import jsPDF from "jspdf";
-import "jspdf-autotable"; 
+import autoTable from "jspdf-autotable";
 
 const MyPayBills = () => {
  
   const { user } = useAuth();
   const [bills, setBills] = useState([]);
 
-  // 1. User Bills Load (useEffect)
+  // User Bills Load (useEffect)
   useEffect(() => {
     if (user?.email) {
       
@@ -37,59 +37,65 @@ const MyPayBills = () => {
     0
   );
 
-  // 2. Download PDF Report (jsPDF + autoTable)
+  // Download PDF Report (jsPDF + autoTable)
   const handleDownloadReport = () => {
-    if (bills.length === 0) {
-      toast("No bills to download!", { icon: "📝" });
-      return;
-    }
+  if (bills.length === 0) {
+    toast("No bills to download!", { icon: "📝" });
+    return;
+  }
 
-    // Initialize jsPDF document
+  try {
     const doc = new jsPDF();
-    
-    // Header Content
+
+    // Header
     doc.setFontSize(18);
     doc.text("My Pay Bills Report", 14, 15);
     doc.setFontSize(12);
-    doc.setTextColor(100); 
-    doc.text(`User: ${user?.email || 'N/A'}`, 14, 25);
+    doc.setTextColor(100);
+    doc.text(`User: ${user?.email || "N/A"}`, 14, 25);
     doc.text(`Total Bills: ${totalBills}`, 14, 32);
-    doc.text(`Total Amount: ৳${totalAmount.toFixed(2)}`, 14, 39);
+    doc.text(`Total Amount: ${totalAmount.toFixed(2)}`, 14, 39);
 
-    // Table Setup
+    // Table Columns
     const tableColumn = [
       "Username",
       "Email",
-      "Amount (৳)", 
+      "Amount",
       "Address",
       "Phone",
       "Date",
     ];
-    // Map bill data to table rows
+
+    // Table Rows
     const tableRows = bills.map((bill) => [
       bill.username,
       bill.email,
-      `৳${Number(bill.amount).toFixed(2)}`, 
+      `${Number(bill.amount).toFixed(2)}`,
       bill.address,
       bill.phone,
       bill.date,
     ]);
 
-    // Add table to PDF using autoTable
-    doc.autoTable({
+    // ✅ Use imported autoTable properly
+    autoTable(doc, {
       head: [tableColumn],
       body: tableRows,
-      startY: 45, 
+      startY: 45,
       styles: { fontSize: 9 },
-      headStyles: { fillColor: [230, 81, 99] } 
+      headStyles: { fillColor: [230, 81, 99] },
     });
 
-    // Save/Download the PDF
+    // Save PDF
     doc.save("My_Pay_Bills_Report.pdf");
     toast.success("Report downloaded successfully!");
-  };
+  } catch (err) {
+    console.error("PDF generation failed:", err);
+    toast.error("Failed to generate report!");
+  }
+};
 
-  // 3. Update Bill (SweetAlert2)
+
+  // Update Bill (SweetAlert2)
   const handleUpdate = async (bill) => {
     const { value: formValues } = await Swal.fire({
       title: "Update Bill Info",
@@ -142,7 +148,7 @@ const MyPayBills = () => {
     }
   };
 
-  // 4. Delete Bill (SweetAlert2)
+  // Delete Bill (SweetAlert2)
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
