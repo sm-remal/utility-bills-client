@@ -10,11 +10,15 @@ import PrivateRoutes from "./PrivateRoutes";
 import About from "../pages/About/About";
 import FAQ from "../pages/FAQ/FAQ";
 import MyProfile from "../pages/MyProfile/MyProfile";
+import Loading from "../components/Loading/Loading";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
+         hydrateFallbackElement: <Loading />,
+         errorElement: <ErrorPage />,
         element: <MainLayout />,
         children: [
             {
