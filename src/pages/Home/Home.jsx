@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router';
 import BillCards from '../../components/BillCards/BillCards';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
+import PaymentMethods from '../../components/PaymentMethods/PaymentMethods';
 
 const Home = () => {
     const latestBills = useLoaderData()
@@ -29,6 +30,7 @@ const Home = () => {
 
             <HowItWorks></HowItWorks>
             <WhyChooseUs></WhyChooseUs>
+            <PaymentMethods></PaymentMethods>
             
         </div>
     );
