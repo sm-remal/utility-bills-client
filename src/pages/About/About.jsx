@@ -110,35 +110,77 @@ const About = () => {
         </p>
       </section>
 
-      {/* How It Works */}
-      <section className="max-w-6xl mx-auto px-6 -mt-16 md:mt-0 py-10 bg-gray-50">
+      {/* Meet Our Team */}
+      {/* Meet Our Team */}
+      <section className="max-w-6xl mx-auto px-6 py-20 bg-gradient-to-br from-white to-pink-50">
         <motion.h2
-          className="text-4xl text-pink-600 font-bold text-center mb-12 text-gray-800"
+          className="text-4xl font-bold text-center mb-12 text-pink-600"
+        >
+          Meet Our Team
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {[
+            {
+              name: "Riyad Hasan",
+              role: "Founder & CEO",
+              img: "https://i.pinimg.com/736x/4c/5d/b5/4c5db5ab497bfb24394771b607c011fb.jpg",
+              color: "from-pink-100 to-pink-50",
+            },
+            {
+              name: "Sadia Rahman",
+              role: "Head of Operations",
+              img: "https://i.pinimg.com/736x/5e/44/96/5e4496343bccec7c4bcac682dce2ce2c.jpg",
+              color: "from-purple-100 to-indigo-50",
+            },
+            {
+              name: "Tanvir Ahmed",
+              role: "Lead Developer",
+              img: "https://i.pinimg.com/1200x/52/ab/34/52ab34f9d702a8d2ce624e8ed27111c9.jpg",
+              color: "from-teal-100 to-green-50",
+            },
+          ].map((member, i) => (
+            <motion.div
+              key={i}
+              className={`rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center bg-gradient-to-br ${member.color}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+            >
+              <img
+                src={member.img}
+                alt={member.name}
+                className="w-28 h-28 mx-auto rounded-full object-cover mb-4 border-4 border-white/50 shadow"
+              />
+              <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+              <p className="text-sm text-pink-600">{member.role}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          className="text-gray-600 text-center mt-12 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          How It Works
-        </motion.h2>
+          We’re a passionate group of builders, designers, and dreamers working together to
+          make bill payments simpler and smarter for everyone across Bangladesh.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 * i, duration: 0.6 }}
-            >
-              <div className="flex justify-center mb-4">{step.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">{step.title}</h3>
-              <p className="text-gray-600 text-sm">{step.desc}</p>
-            </motion.div>
-          ))}
+        {/* See All Members Button */}
+        <div className="flex justify-center mt-10">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            className="px-6 py-3 font-semibold text-white rounded-full bg-gradient-to-r from-pink-500 to-red-500 shadow-md hover:shadow-lg transition"
+          >
+            See All Members
+          </motion.button>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-purple-400 to-red-400 mx-4 md:mx-20 rounded-3xl py-20 text-center text-white">
+      <section className="bg-gradient-to-r from-purple-400 to-red-400 mx-4 md:mx-20 rounded-3xl py-20 text-center text-white mb-12">
         <motion.h2
           className="text-4xl font-bold mb-6"
           initial={{ opacity: 0, y: 20 }}

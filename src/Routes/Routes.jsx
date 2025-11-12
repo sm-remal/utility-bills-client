@@ -12,6 +12,7 @@ import FAQ from "../pages/FAQ/FAQ";
 import MyProfile from "../pages/MyProfile/MyProfile";
 import Loading from "../components/Loading/Loading";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Contact from "../components/Contact/Contact";
 
 
 export const router = createBrowserRouter([
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
             {
                 path: "/faq",
                 element: <FAQ />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
             }
         ]
     },
