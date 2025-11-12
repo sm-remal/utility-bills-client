@@ -9,7 +9,7 @@ import PaymentMethods from '../../components/PaymentMethods/PaymentMethods';
 
 const Home = () => {
     const latestBills = useLoaderData()
-    console.log(latestBills);
+    // console.log(latestBills);
     return (
         <div>
             <title>UtilityPay - Home</title>

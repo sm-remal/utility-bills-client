@@ -91,7 +91,7 @@ const FAQ = () => {
         Help & Support Center
       </h1>
       <motion.p
-        className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
+        className="text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -176,7 +176,7 @@ const FAQ = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
       >
-        <p className="text-gray-700 mb-4 text-lg">
+        <p className="text-gray-700 dark:text-gray-300 mb-4 text-lg">
           Still need help? We’re just one message away.
         </p>
         <button className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-semibold rounded-full hover:scale-105 transition-transform">

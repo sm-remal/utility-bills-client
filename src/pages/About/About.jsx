@@ -42,7 +42,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 dark:bg-gray-900">
       <title>Utility - About</title>
       {/* Hero About Section */}
       <section className="relative max-w-6xl mx-auto px-6 md:-mt-10 py-10 md:py-24">
@@ -61,7 +61,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
         />
         <motion.p
-          className="text-gray-700 text-center max-w-3xl mx-auto text-lg mb-16"
+          className="text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto text-lg mb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -98,7 +98,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="max-w-6xl mx-auto px-6 py-12 bg-white">
+      <section className="max-w-6xl mx-auto px-6 py-8">
         <motion.h2
           className="text-4xl text-pink-600 font-bold text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -106,14 +106,14 @@ const About = () => {
         >
           Our Mission & Vision
         </motion.h2>
-        <p className="text-center max-w-3xl mx-auto text-gray-600 text-lg mb-16">
+        <p className="text-center max-w-3xl mx-auto text-gray-600 dark:text-gray-300 text-lg mb-16">
           Our mission is to make bill payments effortless, transparent, and secure. We envision a world where managing your utilities is simple, fast, and worry-free.
         </p>
       </section>
 
       {/* Meet Our Team */}
       {/* Meet Our Team */}
-      <section className="max-w-6xl mx-auto px-6 py-20 bg-gradient-to-br from-white to-pink-50">
+      <section className="max-w-6xl mx-auto px-6 pb-20">
         <motion.h2
           className="text-4xl font-bold text-center mb-12 text-pink-600"
         >
@@ -160,7 +160,7 @@ const About = () => {
         </div>
 
         <motion.p
-          className="text-gray-600 text-center mt-12 max-w-3xl mx-auto"
+          className="text-gray-600 dark:text-gray-300 text-center mt-12 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >

@@ -9,7 +9,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3500); // message auto hide after 3.5s
+    setTimeout(() => setSubmitted(false), 3500); 
   };
 
   return (
@@ -26,7 +26,7 @@ const Contact = () => {
           Get in Touch
         </motion.h1>
         <motion.p
-          className="text-gray-600 max-w-2xl mx-auto text-lg"
+          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -97,30 +97,30 @@ const Contact = () => {
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col">
-            <label className="text-gray-700 mb-2 font-medium">Full Name</label>
+            <label className="text-gray-700 dark:text-gray-900 mb-2 font-medium">Full Name</label>
             <input
               type="text"
               placeholder="Your Name"
               required
-              className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
+              className="border border-gray-300 dark:text-gray-900 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-gray-700 mb-2 font-medium">Email Address</label>
+            <label className="text-gray-700 dark:text-gray-900 mb-2 font-medium">Email Address</label>
             <input
               type="email"
               placeholder="you@example.com"
               required
-              className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
+              className="border border-gray-300 dark:text-gray-900 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
             />
           </div>
           <div className="md:col-span-2 flex flex-col">
-            <label className="text-gray-700 mb-2 font-medium">Message</label>
+            <label className="text-gray-700 dark:text-gray-900 mb-2 font-medium">Message</label>
             <textarea
               rows="5"
               placeholder="Write your message here..."
               required
-              className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
+              className="border border-gray-300 dark:text-gray-900 rounded-lg px-4 py-3 focus:ring-2 focus:ring-pink-400 outline-none"
             ></textarea>
           </div>
           <div className="md:col-span-2 text-center mt-2">
@@ -141,16 +141,14 @@ const Contact = () => {
         <motion.h2
           className="text-3xl font-bold text-center mb-8 text-pink-600"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
+          animate={{ opacity: 1, y: 0 }}>
           Find Us on the Map
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="rounded-2xl overflow-hidden shadow-lg"
-        >
+          className="rounded-2xl overflow-hidden shadow-lg">
           <iframe
             title="UtilityPay Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.8160152390745!2d90.3774589753104!3d23.829643178622633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c78b6e111111%3A0x6e3f5a1cc33e3c6!2sDhanmondi%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1678867123456!5m2!1sen!2sbd"
