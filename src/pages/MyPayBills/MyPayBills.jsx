@@ -24,7 +24,7 @@ const MyPayBills = () => {
         });
     }
     
-  }, [user]);
+  }, [user, axiosSecure]);
 
   // Total bills and amount calculation
   const totalBills = bills.length;

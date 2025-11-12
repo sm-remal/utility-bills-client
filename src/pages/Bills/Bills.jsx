@@ -20,7 +20,7 @@ const Bills = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://localhost:3000/bill-category?category=${category}`
+          `https://utility-bills-server.vercel.app/bill-category?category=${category}`
         );
         const data = await res.json();
         setBills(data);

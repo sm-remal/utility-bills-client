@@ -24,17 +24,17 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch("http://localhost:3000/latest-bills"),
+                loader: () => fetch("https://utility-bills-server.vercel.app/latest-bills"),
                 element: <Home />
             },
             {
                 path: "/bills",
-                loader: () => fetch("http://localhost:3000/bill-category"),
+                loader: () => fetch("https://utility-bills-server.vercel.app/bill-category"),
                 element: <Bills />
             },
             {
                 path: "/bill-details/:id",
-                loader: ({ params }) => fetch(`http://localhost:3000/bills/${params.id}`),
+                loader: ({ params }) => fetch(`https://utility-bills-server.vercel.app/bills/${params.id}`),
                 element: <PrivateRoutes>
                     <BillDetails />
                 </PrivateRoutes>
