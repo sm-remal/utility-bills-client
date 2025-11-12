@@ -1,29 +1,36 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Loading from "../../components/Loading/Loading";
 
 const MyPayBills = () => {
- 
+
   const { user } = useAuth();
   const [bills, setBills] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const axiosSecure = useAxiosSecure();
 
   // User Bills Load (useEffect)
   useEffect(() => {
     if (user?.email) {
+      setLoading(true);
       axiosSecure.get(`/my-pay-bills?email=${user.email}`)
-        .then((data) => setBills(data.data))
+        .then((data) => {
+          setBills(data.data)
+          setLoading(false)
+        })
         .catch((error) => {
           console.error("Fetch error:", error);
           toast.error("Failed to load bills");
-        });
+        })
+        .finally(() => setLoading(false));
     }
-    
+
   }, [user, axiosSecure]);
 
   // Total bills and amount calculation
@@ -35,60 +42,60 @@ const MyPayBills = () => {
 
   // Download PDF Report (jsPDF + autoTable)
   const handleDownloadReport = () => {
-  if (bills.length === 0) {
-    toast("No bills to download!", { icon: "📝" });
-    return;
-  }
+    if (bills.length === 0) {
+      toast("No bills to download!", { icon: "📝" });
+      return;
+    }
 
-  try {
-    const doc = new jsPDF();
+    try {
+      const doc = new jsPDF();
 
-    // Header
-    doc.setFontSize(18);
-    doc.text("My Pay Bills Report", 14, 15);
-    doc.setFontSize(12);
-    doc.setTextColor(100);
-    doc.text(`User: ${user?.email || "N/A"}`, 14, 25);
-    doc.text(`Total Bills: ${totalBills}`, 14, 32);
-    doc.text(`Total Amount: ${totalAmount.toFixed(2)}`, 14, 39);
+      // Header
+      doc.setFontSize(18);
+      doc.text("My Pay Bills Report", 14, 15);
+      doc.setFontSize(12);
+      doc.setTextColor(100);
+      doc.text(`User: ${user?.email || "N/A"}`, 14, 25);
+      doc.text(`Total Bills: ${totalBills}`, 14, 32);
+      doc.text(`Total Amount: ${totalAmount.toFixed(2)}`, 14, 39);
 
-    // Table Columns
-    const tableColumn = [
-      "Username",
-      "Email",
-      "Amount",
-      "Address",
-      "Phone",
-      "Date",
-    ];
+      // Table Columns
+      const tableColumn = [
+        "Username",
+        "Email",
+        "Amount",
+        "Address",
+        "Phone",
+        "Date",
+      ];
 
-    // Table Rows
-    const tableRows = bills.map((bill) => [
-      bill.username,
-      bill.email,
-      `${Number(bill.amount).toFixed(2)}`,
-      bill.address,
-      bill.phone,
-      bill.date,
-    ]);
+      // Table Rows
+      const tableRows = bills.map((bill) => [
+        bill.username,
+        bill.email,
+        `${Number(bill.amount).toFixed(2)}`,
+        bill.address,
+        bill.phone,
+        bill.date,
+      ]);
 
-    // Use imported autoTable properly
-    autoTable(doc, {
-      head: [tableColumn],
-      body: tableRows,
-      startY: 45,
-      styles: { fontSize: 9 },
-      headStyles: { fillColor: [230, 81, 99] },
-    });
+      // Use imported autoTable properly
+      autoTable(doc, {
+        head: [tableColumn],
+        body: tableRows,
+        startY: 45,
+        styles: { fontSize: 9 },
+        headStyles: { fillColor: [230, 81, 99] },
+      });
 
-    // Save PDF
-    doc.save("My_Pay_Bills_Report.pdf");
-    toast.success("Report downloaded successfully!");
-  } catch (err) {
-    console.error("PDF generation failed:", err);
-    toast.error("Failed to generate report!");
-  }
-};
+      // Save PDF
+      doc.save("My_Pay_Bills_Report.pdf");
+      toast.success("Report downloaded successfully!");
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+      toast.error("Failed to generate report!");
+    }
+  };
 
 
   // Update Bill (SweetAlert2)
@@ -118,14 +125,14 @@ const MyPayBills = () => {
       axiosSecure.put(`/my-pay-bills/${bill._id}`, formValues)
         .then((data) => {
 
-          if (data.data.modifiedCount > 0) { 
+          if (data.data.modifiedCount > 0) {
             Swal.fire({
               title: "Updated!",
               text: "Your bill information has been updated.",
               icon: "success",
               draggable: true,
             });
-            
+
             setBills((prev) =>
               prev.map((b) =>
                 b._id === bill._id ? { ...b, ...formValues } : b
@@ -153,8 +160,8 @@ const MyPayBills = () => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/my-pay-bills/${id}`)
           .then((data) => {
-            
-            if (data.data.deletedCount > 0) { 
+
+            if (data.data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your bill has been deleted.",
@@ -170,6 +177,12 @@ const MyPayBills = () => {
       }
     });
   };
+
+  if (loading) {
+    return (
+      <Loading></Loading>
+    );
+  }
 
   return (
     <div className="p-6 mt-6">
