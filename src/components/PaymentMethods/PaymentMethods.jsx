@@ -35,7 +35,7 @@ const PaymentMethods = () => {
     ];
 
     return (
-        <div className="py-14">
+        <div className="pb-10 md:pt-10">
             {/* Title and Description */}
             <motion.div
                 className="text-center mb-12 px-4"

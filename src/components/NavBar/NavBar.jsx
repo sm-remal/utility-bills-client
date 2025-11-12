@@ -96,36 +96,25 @@ const Navbar = () => {
         }`}
     >
       {/* Navbar Start: Mobile Hamburger + Logo */}
-      <div className="navbar-start flex items-center gap-2">
-        {/* Mobile Menu */}
+      <div className="navbar-start flex items-center gap-3">
         <div className="dropdown lg:hidden">
-          <label tabIndex={0} className="btn btn-ghost mr-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+          <label tabIndex={0} className="text-pink-600">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </label>
           <ul
             tabIndex={0}
-            className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 rounded-box w-52 shadow ${theme === "dark" ? "bg-gray-800 text-gray-100" : "bg-base-100"
-              }`}
+            className={`menu menu-compact dropdown-content mt-5.5 -ml-3 p-2 shadow rounded-box w-52 ${theme === "dark" ? "bg-gray-800 text-gray-100" : "bg-base-100"}`}
           >
             {menuItems}
           </ul>
         </div>
 
+
+
         {/* Logo */}
-        <Link to={"/"} className="-ml-5 md:ml-0">
+        <Link to={"/"} className="">
           <img src={logo} alt="logo" className="w-[160px]" />
         </Link>
       </div>

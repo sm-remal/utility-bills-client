@@ -48,13 +48,13 @@ const HowItWorks = () => {
               key={i}
               data-aos="flip-left"
               data-aos-delay={i * 150}
-              className="group bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl p-[2px] cursor-pointer transform transition-transform duration-700 hover:rotate-y-180"
+              className="group shadow-xl bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl p-[2px] cursor-pointer transform transition-transform duration-700 hover:rotate-y-180"
               style={{
                 perspective: "1000px",
               }}
             >
               <div
-                className="bg-white rounded-2xl p-6 h-full transform transition-all duration-1600 group-hover:rotate-y-180"
+                className="bg-rose-100  rounded-2xl p-6 h-full transform transition-all duration-1600 group-hover:rotate-y-180"
                 style={{
                   transformStyle: "preserve-3d",
                   backfaceVisibility: "hidden",
@@ -93,4 +93,3 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
-

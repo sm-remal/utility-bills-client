@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { auth } from '../firebase/firebase.init';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
@@ -33,17 +33,17 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser, { displayName, photoURL })
     }
 
-    // Verification Email
-    const verificationEmail = () => {
-        setLoading(true);
-        return sendEmailVerification()
-    }
+    // // Verification Email
+    // const verificationEmail = () => {
+    //     setLoading(true);
+    //     return sendEmailVerification()
+    // }
 
-    // Forget Password
-    const forgetPassword = (email) => {
-        setLoading(true)
-        return sendPasswordResetEmail(auth, email)
-    }
+    // // Forget Password
+    // const forgetPassword = (email) => {
+    //     setLoading(true)
+    //     return sendPasswordResetEmail(auth, email)
+    // }
 
     // Sign-Out User
     const signOutUser = () => {
@@ -70,8 +70,8 @@ const AuthProvider = ({children}) => {
         signOutUser,
         googleSignIn,
         updateUserProfile,
-        verificationEmail,
-        forgetPassword,
+        // verificationEmail,
+        // forgetPassword,
         loading,
     }
 

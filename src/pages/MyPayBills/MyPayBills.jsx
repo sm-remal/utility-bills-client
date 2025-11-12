@@ -180,7 +180,7 @@ const MyPayBills = () => {
       </h2>
 
       {/* Summary + Download Button */}
-      <div className="flex justify-between items-center flex-wrap gap-3 mb-8 p-4 bg-white shadow-md rounded-lg">
+      <div className="flex justify-between items-center flex-wrap gap-3 mb-8 p-4 bg-blue-50 shadow-md rounded-lg">
         <div className="text-xl font-bold space-y-1">
           <p className="text-gray-700">Total Bills Paid: <span className="text-red-500">{totalBills}</span></p>
           <p className="text-gray-700">Total Amount: <span className="text-red-500">৳ {totalAmount.toFixed(2)}</span></p>
@@ -196,7 +196,7 @@ const MyPayBills = () => {
       {/* Bills Table */}
       <div className="overflow-x-auto shadow-xl rounded-lg border border-gray-100">
         <table className="table w-full min-w-[700px]">
-          <thead className="bg-gray-50 text-gray-700 text-sm uppercase">
+          <thead className="bg-blue-100 text-gray-700 text-sm uppercase">
             <tr>
               <th className="py-3 px-6 text-left">Username</th>
               <th className="py-3 px-6 text-left">Email</th>

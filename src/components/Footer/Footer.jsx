@@ -99,26 +99,32 @@ const Footer = () => {
             Enter your email address
           </p>
 
-          <form className="flex items-center">
+          <form className="w-full max-w-md mx-auto flex flex-col gap-2">
+            {/* Input Field */}
             <input
               type="email"
               placeholder="username@site.com"
-              className="px-4 py-2 rounded-l-md bg-white text-gray-800 w-[80%] md:w-[75%] outline-none border border-gray-300 text-sm"
+              className="px-4 py-2 rounded-md border bg-white border-gray-300 outline-none text-sm w-full"
             />
+
+            {/* Submit Button */}
             <button
               type="submit"
-              className="bg-gradient-to-r from-pink-500 via-pink-600 to-red-600 hover:from-pink-600 hover:via-pink-700 hover:to-red-700 text-white px-3 md:px-4 py-2 rounded-r-md font-semibold text-sm cursor-pointer"
+              className="bg-gradient-to-r from-pink-500 via-pink-600 to-red-600 
+               hover:from-pink-600 hover:via-pink-700 hover:to-red-700 
+               text-white px-4 py-2 rounded-md font-semibold text-sm w-full md:w-auto"
             >
               Subscribe
             </button>
           </form>
+          
         </div>
       </div>
 
       {/* -------- Bottom Line -------- */}
       <div className="border-t border-pink-700 mt-10 pt-6 text-center text-gray-700 text-sm">
         © {new Date().getFullYear()}{" "}
-        <span className="font-semibold text-red-700">UtilityPay</span>. All rights reserved. | 
+        <span className="font-semibold text-red-700">UtilityPay</span>. All rights reserved. |
         Developed by <span className="text-red-700 font-semibold">Remal</span>
       </div>
     </footer>

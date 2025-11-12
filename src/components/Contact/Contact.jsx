@@ -14,6 +14,7 @@ const Contact = () => {
 
   return (
     <div className="">
+      <title>Utility - Contact</title>
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         <motion.h1

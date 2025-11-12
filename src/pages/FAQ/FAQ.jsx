@@ -84,14 +84,12 @@ const FAQ = () => {
       </div>
 
       {/* Page Header */}
-      <motion.h1
-        className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-pink-600 to-rose-600 mb-4"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+      <h1
+        className="text-4xl font-semibold text-center text-pink-600 mb-4"
+       
       >
         Help & Support Center
-      </motion.h1>
+      </h1>
       <motion.p
         className="text-center text-gray-600 max-w-2xl mx-auto mb-16"
         initial={{ opacity: 0 }}

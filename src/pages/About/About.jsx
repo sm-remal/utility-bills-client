@@ -43,6 +43,7 @@ const About = () => {
 
   return (
     <div className="bg-gray-50">
+      <title>Utility - About</title>
       {/* Hero About Section */}
       <section className="relative max-w-6xl mx-auto px-6 md:-mt-10 py-10 md:py-24">
         <motion.h1
