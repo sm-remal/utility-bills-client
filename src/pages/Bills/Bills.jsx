@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import { motion } from "framer-motion"; 
 import BillCards from "../../components/BillCards/BillCards";
+import Loading from "../../components/Loading/Loading";
 
 const Bills = () => {
   const loadedBills = useLoaderData();
@@ -60,7 +61,7 @@ const Bills = () => {
 
       {/* Loading Spinner */}
       {loading && (
-        <div className="text-center py-10 text-gray-500">Loading bills...</div>
+        <Loading></Loading>
       )}
 
       {/* No Data Message */}

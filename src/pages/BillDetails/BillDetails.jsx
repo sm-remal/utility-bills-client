@@ -106,7 +106,7 @@ const BillDetails = () => {
 
           {/* Right: Info */}
           <div className="flex flex-col justify-center w-full lg:w-1/2 space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-200">
               {title}
             </h1>
 
@@ -132,12 +132,12 @@ const BillDetails = () => {
             </div>
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
               {description}
             </p>
 
             {/* Location + Date */}
-            <div className="space-y-2 text-sm text-gray-500">
+            <div className="space-y-2 text-sm text-gray-500 dark:text-gray-300">
               <p>
                 <span className="font-semibold">📍 Location:</span> {location}
               </p>
@@ -199,7 +199,7 @@ const BillDetails = () => {
                     name="email"
                     value={user?.email || ""}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full bg-gray-100 dark:text-gray-900"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ const BillDetails = () => {
                     name="billId"
                     value={_id}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full bg-gray-100 dark:text-gray-900"
                   />
                 </div>
               </div>
@@ -259,7 +259,7 @@ const BillDetails = () => {
                     name="date"
                     value={currentDate}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full bg-gray-100 dark:text-gray-900"
                   />
                 </div>
                 <div>
@@ -269,7 +269,7 @@ const BillDetails = () => {
                     name="amount"
                     value={`${amount} ৳`}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full bg-gray-100 dark:text-gray-900"
                   />
                 </div>
               </div>

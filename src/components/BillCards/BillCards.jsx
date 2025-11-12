@@ -5,7 +5,7 @@ const BillCards = ({ bill }) => {
   const { _id, title, category, location, image, date, amount } = bill;
 
   return (
-    <div className="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 px-4 md:px-0">
+    <div className="card bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 px-4 md:px-0 h-full">
       {/* Card Image */}
       <figure className="h-48 overflow-hidden">
         <img
@@ -16,7 +16,7 @@ const BillCards = ({ bill }) => {
       </figure>
 
       {/* Card Body */}
-      <div className="card-body">
+      <div className="card-body flex flex-col justify-between">
         {/* Title */}
         <h2 className="card-title text-lg">{title}</h2>
 
@@ -38,17 +38,17 @@ const BillCards = ({ bill }) => {
         </div>
 
         {/* Date */}
-        <div className="text-xs text-gray-500 mt-1 flex items-center">
+        <div className=" text-gray-500 dark:text-gray-300 mt-1 flex items-center">
           <span>📅 {new Date(date).toLocaleDateString()}</span>
         </div>
 
         {/* Location */}
-        <div className="text-xs text-gray-500 mt-2 flex items-center">
+        <div className=" text-gray-500 dark:text-gray-300 mt-2 flex items-center">
           <span>📍 {location}</span>
         </div>
 
         {/* Amount */}
-        <div className="mt-4 font-semibold text-base text-gray-700">
+        <div className="mt-4 font-semibold text-base text-gray-700 dark:text-gray-300">
           💰 Amount: <span className="text-green-600">{amount}৳</span>
         </div>
 

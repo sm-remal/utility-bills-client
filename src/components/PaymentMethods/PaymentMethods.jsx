@@ -46,7 +46,7 @@ const PaymentMethods = () => {
                 <h2 className="text-4xl font-semibold text-pink-600 mb-4">
                     Trusted Payment Partners
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className=" text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                     Pay securely and instantly through your favorite platform. We collaborate with trusted
                     banks and gateways to make every transaction smooth, safe, and reliable.
                 </p>

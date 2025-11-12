@@ -70,7 +70,7 @@ const Login = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input w-full rounded-full focus:border-0 focus:outline-gray-200 px-4"
+                className="input input-bordered w-full rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 px-4 transition-all duration-200"
                 placeholder="Email"
                 required
               />
@@ -80,7 +80,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  className="input w-full rounded-full focus:border-0 focus:outline-gray-200 px-4 pr-12"
+                  className="input input-bordered w-full rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 px-4 pr-12 transition-all duration-200"
                   placeholder="Password"
                   required
                 />

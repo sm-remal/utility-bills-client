@@ -9,7 +9,7 @@ const Footer = () => {
 
         {/* -------- Left: Logo + Description -------- */}
         <div className="md:col-span-2">
-          <img src={logo} alt="Logo" className="w-[180px] mb-3" />
+          <Link to={"/"}><img src={logo} alt="Logo" className="w-[180px] mb-3" /></Link>
           <p className="text-gray-800 text-sm leading-relaxed mb-5">
             Manage your monthly Electricity, Gas, Water, and Internet bills effortlessly —
             anytime, anywhere. Stay organized and stress-free with UtilityPay.

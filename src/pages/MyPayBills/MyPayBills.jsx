@@ -223,7 +223,7 @@ const MyPayBills = () => {
           <tbody>
             {bills.length > 0 ? (
               bills.map((bill) => (
-                <tr key={bill._id} className="hover:bg-gray-100 transition duration-150 border-b border-gray-200 text-sm">
+                <tr key={bill._id} className="hover:bg-gray-100 dark:hover:text-gray-900 transition duration-150 border-b border-gray-200 text-sm">
                   <td className="py-3 px-6">{bill.username}</td>
                   <td className="py-3 px-6">{bill.email}</td>
                   <td className="py-3 px-6 font-semibold text-green-600">৳ {Number(bill.amount).toFixed(2)}</td>
