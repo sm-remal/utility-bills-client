@@ -49,7 +49,7 @@ const CategoryCard = () => {
       </motion.h2>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4 md:px-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-20">
         {categories.map((cat, index) => (
           <motion.div
             key={index}

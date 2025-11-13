@@ -8,9 +8,10 @@ UtilityPay is a full-featured **MERN Stack web application** that allows users t
 ---
 
 ## 🚀 Live Links  
-🔗 **Live Website:** [https://your-live-site-url.netlify.app](https://your-live-site-url.netlify.app)  
-🔗 **Client Repository:** [https://github.com/your-username/utilityhub-client](https://github.com/your-username/utilityhub-client)  
-🔗 **Server Repository:** [https://github.com/your-username/utilityhub-server](https://github.com/your-username/utilityhub-server)
+🔗 **Live Website (Using Firebase):** [https://utility-bills-client.web.app](https://utility-bills-client.web.app)  
+🔗 **Live Website (Using Netlify):** [https://utilitypay.netlify.app](https://utilitypay.netlify.app)  
+🔗 **Client Repository:** [https://github.com/sm-remal/utility-bills-client](https://github.com/sm-remal/utility-bills-client)  
+🔗 **Server Repository:** [https://github.com/sm-remal/utility-bills-server](https://github.com/sm-remal/utility-bills-server)
 
 ---
 
@@ -21,7 +22,7 @@ UtilityPay is a full-featured **MERN Stack web application** that allows users t
 **🔒 Firebase Authentication** – Email/password and Google Sign-in supported.  
 **⚙️ CRUD Functionalities** – Add, view, update, and delete user-specific bills from MongoDB.  
 **📱 Responsive UI** – Fully optimized for all devices with TailwindCSS + DaisyUI.  
-**🎨 Animated & Interactive** – Integrated *Framer Motion*, *Lottie*, and *AOS* for smooth transitions.  
+**🎨 Animated & Interactive** – Integrated *Framer Motion* and *AOS* for smooth transitions.  
 **🧭 Extra Pages** – About, Contact, and Help/FAQ pages for enhanced user experience.  
 **🌈 Pink–Red Gradient Theme** – Elegant color combination for a professional modern look.  
 
@@ -58,7 +59,7 @@ From viewing all utility categories to paying the current month’s bill, tracki
 |-----------|------------------|
 | **Framework** | React.js (Vite) |
 | **Styling** | Tailwind CSS, DaisyUI |
-| **Animations** | Framer Motion, AOS (Animate On Scroll), Lottie React |
+| **Animations** | Framer Motion, AOS (Animate On Scroll) etc |
 | **UI Elements** | Lucide React Icons, React Icons |
 | **Text Effects** | React Simple Typewriter, React Fast Marquee |
 | **Notifications** | React Hot Toast, SweetAlert2, React Toastify |
@@ -155,7 +156,6 @@ src/
  ┃ ┗ Routes.jsx                    # Main route configuration
  ┣ utility/                        # Helper functions / utilities
  ┃ ┗ errorMessage.js               # Error handling utility
- ┣ App.jsx                         # Root app component
  ┗ main.jsx                        # App entry file (React DOM rendering)
 ```
 
