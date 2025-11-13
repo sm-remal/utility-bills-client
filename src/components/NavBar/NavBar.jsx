@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { getErrorMessage } from "../../utility/errorMessage";
 import useAuth from "../../hooks/useAuth";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo1.png";
+
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
