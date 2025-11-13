@@ -50,7 +50,7 @@ const MyProfile = () => {
   return (
     <div className="min-h-screen flex justify-center items-center mt-5 md:mt-10 p-6">
       <title>My Profile</title>
-      <div className="max-w-5xl w-full bg-white rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row gap-10">
+      <div className="max-w-5xl w-full bg-white dark:bg-black rounded-3xl shadow-2xl p-8 flex flex-col md:flex-row gap-10">
 
         {/* ===== Left Side: Profile Card ===== */}
         <div className="flex flex-col items-center md:w-1/3 text-center">
@@ -107,7 +107,7 @@ const MyProfile = () => {
               type="text"
               value={user?.email || ""}
               readOnly
-              className="w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
+              className="w-full p-3 border rounded-lg bg-gray-100 dark:bg-gray-900 cursor-not-allowed"
             />
           </div>
 
