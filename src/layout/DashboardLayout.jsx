@@ -8,9 +8,8 @@ import logo from "../assets/logo.png"
 
 const DashboardLayout = () => {
     // Helper function for active link classes
-    const navLinkClass = ({ isActive }) => 
-        `flex items-center gap-2 px-4 py-2 rounded hover:bg-pink-200 transition-all ${
-            isActive ? 'text-pink-600 font-semibold' : 'text-gray-700'
+    const navLinkClass = ({ isActive }) =>
+        `flex items-center gap-2 px-4 py-2 rounded hover:bg-pink-200 transition-all ${isActive ? 'text-pink-600 font-semibold' : 'text-gray-700'
         }`;
 
     return (
@@ -21,7 +20,7 @@ const DashboardLayout = () => {
                 <nav className="navbar w-full bg-pink-100">
                     <label htmlFor="my-drawer-4" aria-label="open sidebar" className="px-3 cursor-pointer">
                         {/* Sidebar toggle icon */}
-                        <LuPanelLeftOpen className='text-xl' />
+                        <LuPanelLeftOpen className='text-xl dark:text-gray-800' />
                     </label>
                     <Link to={"/"} className="">
                         <img src={logo} alt="logo" className="w-[160px]" />
@@ -57,6 +56,14 @@ const DashboardLayout = () => {
                                 <FaUserCircle className='text-xl' />
                                 <span className="is-drawer-close:hidden">My Profile</span>
                             </NavLink>
+                            
+
+                            {/* Admin Bills */}
+                            <NavLink to={"/dashboard/admin-bills"} className={navLinkClass} data-tip="Admin Bills">
+                                <MdPayments className='text-xl' />
+                                <span className="is-drawer-close:hidden">Admin Bills</span>
+                            </NavLink>
+
                         </li>
                     </ul>
                 </div>

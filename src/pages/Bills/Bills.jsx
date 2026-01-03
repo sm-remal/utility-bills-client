@@ -12,6 +12,8 @@ const Bills = () => {
   const [price, setPrice] = useState("All");
   const [searchText, setSearchText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   // category + price backend filter
   useEffect(() => {
@@ -48,8 +50,19 @@ const Bills = () => {
     );
   });
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredBills.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentBills = filteredBills.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [category, price, searchText]);
+
   return (
-    <div className="container mx-auto px-4 md:px-8 my-10">
+    <div className="container mx-auto px-4 md:px-8 mt-10">
       <title>UtilityPay | Available Bills</title>
 
       {/* Header */}
@@ -107,7 +120,7 @@ const Bills = () => {
 
       {/* Bills */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {filteredBills.map((bill, index) => (
+        {currentBills.map((bill, index) => (
           <motion.div
             key={bill._id}
             initial={{ opacity: 0, y: 40 }}
@@ -118,6 +131,41 @@ const Bills = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Pagination */}
+      {!loading && filteredBills.length > 0 && (
+        <div className="flex justify-center items-center gap-2 mt-10">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="btn btn-sm btn-outline btn-pink"
+          >
+            Previous
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`btn btn-sm ${
+                currentPage === page
+                  ? "bg-pink-600 text-white"
+                  : "btn-outline btn-pink"
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="btn btn-sm btn-outline btn-pink"
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 };
