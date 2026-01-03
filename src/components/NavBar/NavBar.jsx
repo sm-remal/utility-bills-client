@@ -104,7 +104,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar fixed top-0 left-0 w-full z-50 shadow-sm px-4 transition-all duration-300 ${theme === "dark"
+      className={`navbar  shadow-sm px-4 transition-all duration-300 ${theme === "dark"
         ? "bg-gray-900 text-gray-100"
         : "bg-pink-50 text-gray-900"
         }`}

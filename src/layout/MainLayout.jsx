@@ -2,8 +2,8 @@ import React from 'react';
 import { Outlet, useNavigation } from 'react-router';
 import Footer from '../components/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
-import Navbar from '../components/Navbar/Navbar';
 import Loading from '../components/Loading/Loading';
+import Navbar from '../components/NavBar/NavBar';
 
 const MainLayout = () => {
     const navigation = useNavigation();

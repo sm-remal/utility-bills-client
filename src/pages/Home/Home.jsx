@@ -6,6 +6,8 @@ import BillCards from '../../components/BillCards/BillCards';
 import HowItWorks from '../../components/HowItWorks/HowItWorks';
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 import PaymentMethods from '../../components/PaymentMethods/PaymentMethods';
+import FAQ from '../../components/FAQ/FAQ';
+import TrustSection from '../../components/TrustSection/TrustSection';
 
 const Home = () => {
     const latestBills = useLoaderData()
@@ -30,7 +32,9 @@ const Home = () => {
 
             <HowItWorks></HowItWorks>
             <WhyChooseUs></WhyChooseUs>
+            <FAQ></FAQ>
             <PaymentMethods></PaymentMethods>
+            <TrustSection></TrustSection>
             
         </div>
     );
