@@ -38,9 +38,7 @@ export const router = createBrowserRouter([
             {
                 path: "/bill-details/:id",
                 loader: ({ params }) => fetch(`https://utility-bills-server.vercel.app/bills/${params.id}`),
-                element: <PrivateRoutes>
-                    <BillDetails />
-                </PrivateRoutes>
+                element: <BillDetails />
             },
             {
                 path: "/my-bills",
