@@ -2,7 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import { GoHomeFill } from "react-icons/go";
 import { IoCall, IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaHospitalUser } from "react-icons/fa";
-import { MdPayments } from "react-icons/md";
+import { BiSolidDashboard } from "react-icons/bi";
 import { BsReceipt } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -67,11 +67,13 @@ const Navbar = () => {
         </NavLink>
       </li>
       {user && (
-        <li>
-          <NavLink to={"/my-bills"}>
-            <MdPayments className="text-lg" /> My Pay Bills
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to={"/dashboard/my-bills"}>
+              <BiSolidDashboard className="text-lg" /> Dashboard
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );
@@ -172,17 +174,16 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 ${
-                theme === "dark" ? "bg-gray-800 text-gray-100" : "bg-base-100"
-              }`}
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 ${theme === "dark" ? "bg-gray-800 text-gray-100" : "bg-base-100"
+                }`}
             >
               <li className="menu-title">
-                <span className="text-sm font-semibold">{user?.displayName || "User"}</span>
+                <span className="text-sm font-semibold text-gray-700">{user?.displayName || "User"}</span>
               </li>
               <li className="menu-title">
-                <span className="text-xs opacity-70">{user?.email}</span>
+                <span className="text-xs text-gray-600">{user?.email}</span>
               </li>
-              <div className="divider my-1"></div>
+              <div className="divider my-1 text-gray-600"></div>
               <li>
                 <a
                   onClick={handleSignout}

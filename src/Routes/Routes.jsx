@@ -3,7 +3,6 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
 import Bills from "../pages/Bills/Bills";
 import BillDetails from "../pages/BillDetails/BillDetails";
-import MyPayBills from "../pages/MyPayBills/MyPayBills";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoutes from "./PrivateRoutes";
@@ -16,11 +15,8 @@ import Contact from "../components/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
 import Cookies from "../components/Cookies/Cookies";
 import Privacy from "../pages/Privacy/Privacy";
-// import Dashboard from "../pages/Dashboard/Dashboard";
-// import MyPayments from "../pages/Dashboard/User/MyPayments";
-// import Profile from "../pages/Dashboard/User/Profile";
-// import ManageBills from "../pages/Dashboard/Admin/ManageBills";
-// import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
+import MyPayBills from "../pages/MyPayBills/MyPayBills";
+import DashboardLayout from "../layout/DashboardLayout";
 
 
 export const router = createBrowserRouter([
@@ -46,24 +42,12 @@ export const router = createBrowserRouter([
                 element: <BillDetails />
             },
             {
-                path: "/my-bills",
-                element: <PrivateRoutes>
-                    <MyPayBills />
-                </PrivateRoutes>
-            },
-            {
                 path: "/login",
                 element: <Login />
             },
             {
                 path: "/registration",
                 element: <Registration />
-            },
-            {
-                path: "/my-profile",
-                element: <PrivateRoutes>
-                    <MyProfile />
-                </PrivateRoutes>
             },
             {
                 path: "/about",
@@ -92,32 +76,19 @@ export const router = createBrowserRouter([
         ]
     },
 
-    // ========== Dashboard ========= 
-
-    // {
-    //     path: "dashboard",
-    //     element: <Dashboard />,
-    //     children: [
-
-    //         // ========== User Routes ========== 
-    //         {
-    //             path: "my-payments",
-    //             element: <MyPayments></MyPayments>
-    //         },
-    //         {
-    //             path: "profile",
-    //             element: <Profile></Profile>
-    //         },
-
-    //         // ========== Admin Routes ==========
-    //         {
-    //             path: "profile",
-    //             element: <ManageBills></ManageBills>
-    //         },
-    //         {
-    //             path: "profile",
-    //             element: <ManageUsers></ManageUsers>
-    //         },
-    //     ]
-    // }
+    {
+        path: "/dashboard",
+        element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+        children: [
+            {
+                path: "my-bills",
+                element: <MyPayBills />
+            },
+            {
+                path: "my-profile",
+                element: <MyProfile />
+            },
+        ]
+        
+    }
 ]);
