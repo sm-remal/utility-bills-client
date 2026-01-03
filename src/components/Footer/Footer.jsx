@@ -73,7 +73,7 @@ const Footer = () => {
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li><Link to="/about" className="hover:text-red-700 hover:font-medium">About</Link></li>
             <li><Link to="/contact" className="hover:text-red-700 hover:font-medium">Contact</Link></li>
-            <li><Link to="#" className="hover:text-red-700 hover:font-medium">Careers</Link></li>
+            {/* <li><Link to="#" className="hover:text-red-700 hover:font-medium">Careers</Link></li> */}
             <li><Link to="/faq" className="hover:text-red-700 hover:font-medium">Help / FAQ</Link></li>
           </ul>
         </div>
@@ -84,9 +84,9 @@ const Footer = () => {
             Legal
           </h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-            <li><Link to="#" className="hover:text-red-700 hover:font-medium">Terms of Use</Link></li>
-            <li><Link to="#" className="hover:text-red-700 hover:font-medium">Privacy Policy</Link></li>
-            <li><Link to="#" className="hover:text-red-700 hover:font-medium">Cookie Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-red-700 hover:font-medium">Terms of Use</Link></li>
+            <li><Link to="/privacy" className="hover:text-red-700 hover:font-medium">Privacy Policy</Link></li>
+            <li><Link to="/cookies" className="hover:text-red-700 hover:font-medium">Cookie Policy</Link></li>
           </ul>
         </div>
 

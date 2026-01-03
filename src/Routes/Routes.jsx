@@ -13,6 +13,9 @@ import MyProfile from "../pages/MyProfile/MyProfile";
 import Loading from "../components/Loading/Loading";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Contact from "../components/Contact/Contact";
+import Terms from "../pages/Terms/Terms";
+import Cookies from "../components/Cookies/Cookies";
+import Privacy from "../pages/Privacy/Privacy";
 
 
 export const router = createBrowserRouter([
@@ -70,7 +73,19 @@ export const router = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact />
-            }
+            },
+            {
+                path: "terms",
+                element: <Terms />
+            },
+            {
+                path: "cookies",
+                element: <Cookies />
+            },
+            {
+                path: "privacy",
+                element: <Privacy />
+            },
         ]
     },
 ]);

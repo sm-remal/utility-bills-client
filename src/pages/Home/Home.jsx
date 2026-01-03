@@ -18,12 +18,12 @@ const Home = () => {
             <Banner></Banner>
             <CategoryCard></CategoryCard>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <h2 className="text-center text-2xl sm:text-3xl md:text-3xl font-semibold text-pink-600 mb-12">
                     Latest Bills
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     {latestBills?.map(bill => (
                         <BillCards key={bill._id} bill={bill} />
                     ))}
