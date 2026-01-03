@@ -16,13 +16,18 @@ import Contact from "../components/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
 import Cookies from "../components/Cookies/Cookies";
 import Privacy from "../pages/Privacy/Privacy";
+// import Dashboard from "../pages/Dashboard/Dashboard";
+// import MyPayments from "../pages/Dashboard/User/MyPayments";
+// import Profile from "../pages/Dashboard/User/Profile";
+// import ManageBills from "../pages/Dashboard/Admin/ManageBills";
+// import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
-         hydrateFallbackElement: <Loading />,
-         errorElement: <ErrorPage />,
+        hydrateFallbackElement: <Loading />,
+        errorElement: <ErrorPage />,
         element: <MainLayout />,
         children: [
             {
@@ -86,4 +91,33 @@ export const router = createBrowserRouter([
             },
         ]
     },
+
+    // ========== Dashboard ========= 
+
+    // {
+    //     path: "dashboard",
+    //     element: <Dashboard />,
+    //     children: [
+
+    //         // ========== User Routes ========== 
+    //         {
+    //             path: "my-payments",
+    //             element: <MyPayments></MyPayments>
+    //         },
+    //         {
+    //             path: "profile",
+    //             element: <Profile></Profile>
+    //         },
+
+    //         // ========== Admin Routes ==========
+    //         {
+    //             path: "profile",
+    //             element: <ManageBills></ManageBills>
+    //         },
+    //         {
+    //             path: "profile",
+    //             element: <ManageUsers></ManageUsers>
+    //         },
+    //     ]
+    // }
 ]);
